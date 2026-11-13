@@ -3,15 +3,21 @@ from processor import parse_season_pass_validity, compute_trail_gradient, calcul
 
 @given(st.text() | st.none())
 def test_parse_season_pass_validity_no_crash(s):
-    #To-Do:Using try and except complete this function.
-    pass
+    try:
+        parse_season_pass_validity(s)
+    except Exception as e:
+        assert False, f"parse_season_pass_validity crashed with: {e!r} for input {s!r}"
 
 @given(st.text() | st.none())
 def test_compute_trail_gradient_safe(s):
-    #To-Do:Using try and except complete this function.
-    pass
+    try:
+        compute_trail_gradient(s)
+    except Exception as e:
+        assert False, f"compute_trail_gradient crashed with: {e!r} for input {s!r}"
 
 @given(st.text() | st.none())
 def test_calculate_lift_access_tier_safe(s):
-    #To-Do:Using try and except complete this function.
-    pass
+    try:
+        calculate_lift_access_tier(s)
+    except Exception as e:
+        assert False, f"calculate_lift_access_tier crashed with: {e!r} for input {s!r}"
